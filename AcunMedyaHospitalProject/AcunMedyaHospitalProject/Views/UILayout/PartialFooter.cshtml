@@ -1,0 +1,71 @@
+﻿@model AcunMedyaHospitalProject.Controllers.SosyalBölüm
+
+<footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="footer_widget">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <img src="/Templates/Templates/docmed-master/img/footer_logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>
+                            Karanlığı alt eden altıncı sabahın ışığı
+                            ve karanlığı aşan topluluk.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">Bölümler</h3>
+                        <ul>
+                            @foreach (var department in Model.Departments)
+                            {
+                                <li><a href="#">@department.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">Social Media</h3>
+                        <ul>
+                            @foreach (var sosyalmedia in Model.SocialMedia)
+                            {
+                                <li><a href="@sosyalmedia.Link">@sosyalmedia.Platform</a></li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">Adres</h3>
+                        <p>
+                            Nişantaşı Üniversitesi Maslak 1453 NeoTech Kampüsü, 34398 Sarıyer/İstanbul <br>
+                            (0212) 210 10 10 <br>
+                            <a href="mailto:farukemre@gmail.com" style="color: white; text-decoration: underline;">farukemrebaser@icloud.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Telif Hakkı &copy;
+                        <script>document.write(new Date().getFullYear());</script> Tüm hakları saklıdır | Bu şablon <i class="fa fa-heart-o" aria-hidden="true"></i> ile yapılmıştır <a href="https://colorlib.com" target="_blank">Colorlib</a> tarafından
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

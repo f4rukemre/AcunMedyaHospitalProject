@@ -1,0 +1,25 @@
+﻿@model AcunMedyaHospitalProject.Entities.Doctor
+@{
+    ViewBag.Title = "UpdateDoctor";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        @Html.HiddenFor(x => x.ID)
+        <label>Adı</label>
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        <br />
+        <label>Soyadı</label>
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        <br />
+        <label>Bölümü</label>
+        @Html.DropDownListFor(x => x.DepartmentId, (SelectList)ViewBag.Departments, "Kategori seçin", new { @class = "form-control" })
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.ImgUrl, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+</div>
+
+
