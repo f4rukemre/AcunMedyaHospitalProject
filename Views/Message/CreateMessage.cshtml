@@ -1,0 +1,38 @@
+﻿@model AcunMedyaHospitalProject.Entities.Message
+@{
+    ViewBag.Title = "CreateMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Slider Ekleme Formu</h4>
+            <p class="card-description">Hastaneye yeni slider girişini bu formdan yapabilirsiniz.</p>
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label>İçerik</label>
+                    @Html.TextBoxFor(x => x.Content, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Content)</span>
+                </div>
+                <div class="form-group">
+                    <label>İsim</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Name)</span>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Email)</span>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Subject)</span>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2"> Kaydet </button>
+            </form>
+        </div>
+    </div>
+</div>
+

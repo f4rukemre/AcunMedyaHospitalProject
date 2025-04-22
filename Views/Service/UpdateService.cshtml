@@ -1,0 +1,28 @@
+﻿@model AcunMedyaHospitalProject.Entities.Service
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        @Html.HiddenFor(x => x.ID)
+        <label>İsim</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        <label>Açıklama</label>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <label>İkon Adı</label>
+        @Html.TextBoxFor(x => x.IconName, new { @class = "form-control" })
+        <br />
+        <label>Buton Adı</label>
+        @Html.TextBoxFor(x => x.ButtonName, new { @class = "form-control" })
+        <br />
+        <label>Buton Link</label>
+        @Html.TextBoxFor(x => x.ButtonLink, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+</div>
+

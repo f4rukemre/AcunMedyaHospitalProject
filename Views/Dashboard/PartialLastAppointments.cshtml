@@ -1,0 +1,66 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Appointment>
+<div class="col-xl-12 col-sm-6 grid-margin stretch-card">
+    <div class="card shadow-sm">
+        <div class="card-body px-4 py-4 overflow-auto">
+            <h4 class="card-title text-primary">Son Randevular</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>Id</th>
+                            <th>Doktor Adı</th>
+                            <th>Doktor Departmanı</th>
+                            <th>Tarih</th>
+                            <th>Hasta Adı</th>
+                            <th>Hasta Soyadı</th>
+                            <th>Hasta Telefon</th>
+                            <th>Hasta Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Doctor.FullName</td>
+                                <td>@item.Doctor.Department.Name</td>
+                                <td>@item.Date.ToString("d") @item.Time.ToString()</td>
+                                <td>@item.PatientFirstName</td>
+                                <td>@item.PatientLastName</td>
+                                <td>@item.PatientPhone</td>
+                                <td>@item.PatientEmail</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <a class="text-primary mt-3 d-block" href="/Appointment/Index">
+                <span class="font-weight-bold h6">Tüm randevuları göster</span>
+                <i class="mdi mdi-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+
+    .bg-primary {
+        background-color: #007bff !important; /* Mavi renk başlık */
+    }
+
+    .text-primary {
+        color: #007bff !important; /* Mavi renk metin */
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Hover için gri ton */
+    }
+</style>
